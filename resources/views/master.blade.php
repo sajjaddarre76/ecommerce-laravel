@@ -37,6 +37,11 @@
         .detail-img{
             height: 250px;
         }
+        .cart-list-divider{
+            margin-bottom: 20px;
+            border-bottom: 1px #ccc solid;
+            padding-bottom: 20px;
+        }
     </style>
 </head>
 <body>

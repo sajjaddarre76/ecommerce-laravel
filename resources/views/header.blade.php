@@ -31,7 +31,7 @@ $itemsCount = ProductController::cartItem();
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Cart({{ $itemsCount }})</a></li>
+                <li><a href="/cartlist">Cart({{ $itemsCount }})</a></li>
                 @if(\Illuminate\Support\Facades\Session::has('user'))
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ \Illuminate\Support\Facades\Session::get('user')['name'] }}
