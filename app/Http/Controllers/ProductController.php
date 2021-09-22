@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -72,5 +73,22 @@ class ProductController extends Controller
             ->sum('products.price');
 
         return view('ordernow', ['totalPrice' => $totalPrice]);
+    }
+
+    public function orderPlace(Request $req){
+        $user_id = Session::get('user')['id'];
+        $allCart = Cart::where('user_id', $user_id)->get();
+        foreach ($allCart as $cart){
+           $order = new Order();
+           $order->product_id = $cart['product_id'];
+           $order->user_id = $cart['user_id'];
+           $order->status = 'pendding';
+           $order->payment_method = $req->payment;
+           $order->payment_status = 'pendding';
+           $order->address = $req->address;
+           $order->save();
+           Cart::where('user_id', $user_id)->delete();
+        };
+        return redirect('/');
     }
 }
