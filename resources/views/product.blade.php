@@ -39,10 +39,12 @@
             ?>
             @foreach($products as $product)
             <div class="trending-item" style="width: {{ 100 / $productsCount }}%">
-                <img src="{{ $product->gallery }}" class="trending-image">
-                <div class="">
-                    <h3>{{ $product->name }}</h3>
-                </div>
+                <a href="detail/{{ $product->id }}">
+                    <img src="{{ $product->gallery }}" class="trending-image">
+                    <div class="">
+                        <h3>{{ $product->name }}</h3>
+                    </div>
+                </a>
             </div>
             @endforeach
         </div>

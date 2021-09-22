@@ -34,6 +34,9 @@
         .trending-image{
             height: 100px;
         }
+        .detail-img{
+            height: 250px;
+        }
     </style>
 </head>
 <body>
