@@ -25,6 +25,15 @@
             background-color: #637763;
             opacity: .6;
         }
+        .trending-wrapper{
+            margin: 30px;
+        }
+        .trending-item{
+            float: left;
+        }
+        .trending-image{
+            height: 100px;
+        }
     </style>
 </head>
 <body>
